@@ -1,16 +1,30 @@
-### Hi there 👋
+# Introduction
+# Hello everyone, I'm Debargha Bhattacharjee from NSEC in the first year of CSE Branch
 
-<!--
-**Dozzergeeky/Dozzergeeky** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Details 
+Name:-_Debargha Bhattacharjee_
+City:-_Kolkata_
 
-Here are some ideas to get you started:
+## College Details
+College name:- _Netaji Subhash Engineering College_
+Location:- _Garia,Kolkata_
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Skills
+
+### Coding
+|Sl.No.|Name|Level|
+|---|---|---|
+|1|Python|Intermediate|
+|2|C|Basic|
+
+### Creative
+|Sl.No.|Name|Software|
+|---|---|---|
+|1|PhotoEditing|Adobe LightRoom|
+|2|Video Editiong|Adobe Premiere Pro|
+|3|Documents related|Microsoft Office|
+
+## Languages known (in order of proficiency)
+1. Bengali
+2. English
+3. Hindi
