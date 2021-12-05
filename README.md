@@ -32,7 +32,7 @@ Location:- _Garia,Kolkata_
 3. Hindi
 
 ## 🤝Connect with me
-[<img src="https://play-lh.googleusercontent.com/wIf3HtczQDjHzHuu7vezhqNs0zXAG85F7VmP7nhsTxO3OHegrVXlqIh_DWBYi86FTIGk">](https://twitter.com/dozzergeeky)
+[<img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco,dpr_1/v1397180207/d242197edc3ff044620cf2d8ff39d6b3.jpg">](https://twitter.com/dozzergeeky)
 
 [<img src="https://play-lh.googleusercontent.com/kMofEFLjobZy_bCuaiDogzBcUT-dz3BBbOrIEjJ-hqOabjK8ieuevGe6wlTD15QzOqw">](https://www.linkedin.com/in/debargha-bhattacharjee-b6a89a221)
 
