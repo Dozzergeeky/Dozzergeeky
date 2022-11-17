@@ -1,9 +1,9 @@
 <!-- <img src="https://img.wallpapersafari.com/desktop/1680/1050/33/10/JYPM91.jpg" width="300"> -->
 
-### <p style="text-align: center;"> Hi there, I'm Debargha###<p style="text-align: center;"> Hi there, I'm Debargha<img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30"></p>
+### <h1 align: center;"> Hi there, I'm Debargha <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30"> </h1>
 
 ---
-#### <p style="text-align: center;">3⭐ C/C++ Competitive Coder, Open-source Contributor, Web and Google Cloud Developer and Machine Learing Enthusiast </p>
+#### <h3 align: center;">3⭐ C/C++ Competitive Coder, Open-source Contributor, Web and Google Cloud Developer and Machine Learing Enthusiast </h3>
 
 ---
 #### Connect with me:
