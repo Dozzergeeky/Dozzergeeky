@@ -11,7 +11,7 @@
 <h2> Connect with me: </h2>
 
 &nbsp;&nbsp;
-[![website](./img/twitter-light.svg)](https://twitter.com/dozzergeeky)
+[![website]("")](https://twitter.com/dozzergeeky)
 &nbsp;&nbsp;
 [![website](./img/linkedin-light.svg)](https://www.linkedin.com/in/dozzergeeky/)
 &nbsp;&nbsp;
