@@ -1,18 +1,18 @@
 <!-- <img src="https://img.wallpapersafari.com/desktop/1680/1050/33/10/JYPM91.jpg" width="300"> -->
 
-<h1 align: center">Hi there, Debargha here <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30"> </h1>
+<div align="center"> <h1>Hi there, Debargha here <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30"></h1></div>
 
-<h3 align: center"> 3⭐ C/C++ Competitive Coder, Open-source Contributor, Web and Google Cloud Developer and Machine Learing Enthusiast </h3>
+<div align: center"> <h3>3⭐ C/C++ Competitive Coder, Open-source Contributor, Web and Google Cloud Developer and Machine Learing Enthusiast </h3></div>
 
 
 <h2> Connect with me: </h2>
 
 &nbsp;&nbsp;
-[![website](./img/twitter-light.svg)](https://twitter.com/codestackr#gh-light-mode-only)
+[![website](./img/twitter-light.svg)](https://twitter.com/dozzergeeky)
 &nbsp;&nbsp;
-[![website](./img/linkedin-light.svg)](https://linkedin.com/in/codeSTACKr#gh-light-mode-only)
+[![website](./img/linkedin-light.svg)](https://www.linkedin.com/in/dozzergeeky/)
 &nbsp;&nbsp;
-[![website](./img/instagram-light.svg)](https://instagram.com/codeSTACKr#gh-light-mode-only)
+[![website](./img/instagram-light.svg)](https://instagram.com/dozzer_geeky)
 
 ---
 
