@@ -2,7 +2,10 @@
 
 <div align="center"> <h1>Hi there, Debargha here <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30"></h1></div>
 
-<div align: center"> <h3>3⭐ C/C++ Competitive Coder, Open-source Contributor, Web and Google Cloud Developer and Machine Learing Enthusiast </h3></div>
+<div align="center"> <h3>3⭐ C/C++ Competitive Coder</h3></div>
+<div align="center"><h3>Open-source Contributor</h3></div>
+<div align="center"><h3>Web and Google Cloud Developer</h3> </div>
+<div align="center"><h3>Machine Learing Enthusiast </h3></div>
 
 
 <h2> Connect with me: </h2>
