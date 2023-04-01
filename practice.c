@@ -1081,4 +1081,68 @@ int main()
 	return 0;
 }
 
+//find max and min in a array using divide and conquer
+// #include<stdio.h>
+// #include<conio.h>
 
+// int max(int a, int b)
+// {
+//     if (a > b)
+//         return a;
+//     else
+//         return b;
+// }
+// int min(int a, int b)
+// {
+//     if (a < b)
+//         return a;
+//     else
+//         return b;
+// }
+// int maxmin(int a[], int i, int j, int *max, int *min)
+// {
+//     int mid, max1, min1, max2, min2;
+//     if (i == j)
+//     {
+//         *max = *min = a[i];
+//     }
+//     else
+//     {
+//         if (i == j - 1)
+//         {
+//             if (a[i] > a[j])
+//             {
+//                 *max = a[i];
+//                 *min = a[j];
+//             }
+//             else
+//             {
+//                 *max = a[j];
+//                 *min = a[i];
+//             }
+//         }
+//         else
+//         {
+//             mid = (i + j) / 2;
+//             maxmin(a, i, mid, &max1, &min1);
+//             maxmin(a, mid + 1, j, &max2, &min2);
+//             *max = max(max1, max2);
+//             *min = min(min1, min2);
+//         }
+//     }
+// }
+
+// int main()
+// {
+//     int a[100], n, i, max1, min1;
+//     printf("Enter the number of elements in the array: ");
+//     scanf("%d", &n);
+//     printf("Enter the elements of the array: ");
+//     for (i = 0; i < n; i++)
+//         scanf("%d", &a[i]);
+//     max1 = findmax(a, 0, n - 1);
+//     min1 = findmin(a, 0, n - 1);
+//     printf("The maximum element in the array is %d", max1);
+//     printf("The minimum element in the array is %d", min1);
+//     return 0;
+// }
