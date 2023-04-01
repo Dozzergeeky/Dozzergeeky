@@ -1028,121 +1028,115 @@
 //         }while(ch!=6);
 // }
 
-//chain-matrix manupulation
-// See the Cormen book for details of the following algorithm
-#include <limits.h>
-#include <stdio.h>
+// //chain-matrix manupulation
+// // See the Cormen book for details of the following algorithm
+// #include <limits.h>
+// #include <stdio.h>
 
-// Matrix Ai has dimension p[i-1] x p[i] for i = 1..n
-int MatrixChainOrder(int p[], int n)
-{
-
-	/* For simplicity of the program, one extra row and one
-	extra column are allocated in m[][]. 0th row and 0th
-	column of m[][] are not used */
-	int m[n][n];
-
-	int i, j, k, L, q;
-
-	/* m[i, j] = Minimum number of scalar multiplications needed
-	to compute the matrix A[i]A[i+1]...A[j] = A[i..j] where
-	dimension of A[i] is p[i-1] x p[i] */
-
-	// cost is zero when multiplying one matrix.
-	for (i = 1; i < n; i++)
-		m[i][i] = 0;
-
-	// L is chain length.
-	for (L = 2; L < n; L++) {
-		for (i = 1; i < n - L + 1; i++) {
-			j = i + L - 1;
-			m[i][j] = INT_MAX;
-			for (k = i; k <= j - 1; k++) {
-				// q = cost/scalar multiplications
-				q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
-				if (q < m[i][j])
-					m[i][j] = q;
-			}
-		}
-	}
-
-	return m[1][n - 1];
-}
-
-int main()
-{
-	int arr[] = { 1, 2, 3, 4 };
-	int size = sizeof(arr) / sizeof(arr[0]);
-
-	printf("Minimum number of multiplications is %d ",
-		MatrixChainOrder(arr, size));
-
-	getchar();
-	return 0;
-}
-
-//find max and min in a array using divide and conquer
-// #include<stdio.h>
-// #include<conio.h>
-
-// int max(int a, int b)
+// // Matrix Ai has dimension p[i-1] x p[i] for i = 1..n
+// int MatrixChainOrder(int p[], int n)
 // {
-//     if (a > b)
-//         return a;
-//     else
-//         return b;
-// }
-// int min(int a, int b)
-// {
-//     if (a < b)
-//         return a;
-//     else
-//         return b;
-// }
-// int maxmin(int a[], int i, int j, int *max, int *min)
-// {
-//     int mid, max1, min1, max2, min2;
-//     if (i == j)
-//     {
-//         *max = *min = a[i];
-//     }
-//     else
-//     {
-//         if (i == j - 1)
-//         {
-//             if (a[i] > a[j])
-//             {
-//                 *max = a[i];
-//                 *min = a[j];
-//             }
-//             else
-//             {
-//                 *max = a[j];
-//                 *min = a[i];
-//             }
-//         }
-//         else
-//         {
-//             mid = (i + j) / 2;
-//             maxmin(a, i, mid, &max1, &min1);
-//             maxmin(a, mid + 1, j, &max2, &min2);
-//             *max = max(max1, max2);
-//             *min = min(min1, min2);
-//         }
-//     }
+
+// 	/* For simplicity of the program, one extra row and one
+// 	extra column are allocated in m[][]. 0th row and 0th
+// 	column of m[][] are not used */
+// 	int m[n][n];
+
+// 	int i, j, k, L, q;
+
+// 	/* m[i, j] = Minimum number of scalar multiplications needed
+// 	to compute the matrix A[i]A[i+1]...A[j] = A[i..j] where
+// 	dimension of A[i] is p[i-1] x p[i] */
+
+// 	// cost is zero when multiplying one matrix.
+// 	for (i = 1; i < n; i++)
+// 		m[i][i] = 0;
+
+// 	// L is chain length.
+// 	for (L = 2; L < n; L++) {
+// 		for (i = 1; i < n - L + 1; i++) {
+// 			j = i + L - 1;
+// 			m[i][j] = INT_MAX;
+// 			for (k = i; k <= j - 1; k++) {
+// 				// q = cost/scalar multiplications
+// 				q = m[i][k] + m[k + 1][j] + p[i - 1] * p[k] * p[j];
+// 				if (q < m[i][j])
+// 					m[i][j] = q;
+// 			}
+// 		}
+// 	}
+
+// 	return m[1][n - 1];
 // }
 
 // int main()
 // {
-//     int a[100], n, i, max1, min1;
-//     printf("Enter the number of elements in the array: ");
-//     scanf("%d", &n);
-//     printf("Enter the elements of the array: ");
-//     for (i = 0; i < n; i++)
-//         scanf("%d", &a[i]);
-//     max1 = findmax(a, 0, n - 1);
-//     min1 = findmin(a, 0, n - 1);
-//     printf("The maximum element in the array is %d", max1);
-//     printf("The minimum element in the array is %d", min1);
-//     return 0;
+// 	int arr[] = { 1, 2, 3, 4 };
+// 	int size = sizeof(arr) / sizeof(arr[0]);
+
+// 	printf("Minimum number of multiplications is %d ",
+// 		MatrixChainOrder(arr, size));
+
+// 	getchar();
+// 	return 0;
 // }
+// find max and min in a array using divide and conquer
+#include<stdio.h>
+#include<conio.h>
+
+int max(int a, int b)
+{
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+int min(int a, int b)
+{
+    if (a < b)
+        return a;
+    else
+        return b;
+}
+int maxmin(int a[], int i, int j, int *max, int *min)
+{
+    int max1, min1, mid;
+    if (i == j)
+    {
+        *max = *min = a[i];
+    }
+    else if (i == j - 1)
+    {
+        if (a[i] < a[j])
+        {
+            *min = a[i];
+            *max = a[j];
+        }
+        else
+        {
+            *min = a[j];
+            *max = a[i];
+        }
+    }
+    else
+    {
+        mid = (i + j) / 2;
+        maxmin(a, i, mid, max, min);
+        maxmin(a, mid + 1, j, &max1, &min1);
+        *max = max(*max, max1);
+        *min = min(*min, min1);
+    }
+}
+int main()
+{
+	int a[100], n, i, max, min;
+	printf("Enter the number of elements in the array: ");
+	scanf("%d", &n);
+	printf("Enter the elements of the array: ");
+	for (i = 0; i < n; i++)
+		scanf("%d", &a[i]);
+	maxmin(a, 0, n - 1, &max, &min);
+	printf("Maximum element: %d", max);
+	printf("Minimum element: %d", min);
+	return 0;
+}
