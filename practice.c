@@ -1081,62 +1081,111 @@
 // 	return 0;
 // }
 // find max and min in a array using divide and conquer
-#include<stdio.h>
-#include<conio.h>
+// #include<stdio.h>
+// #include<conio.h>
 
-int max(int a, int b)
-{
-    if (a > b)
-        return a;
-    else
-        return b;
+// int max(int a, int b)
+// {
+//     if (a > b)
+//         return a;
+//     else
+//         return b;
+// }
+// int min(int a, int b)
+// {
+//     if (a < b)
+//         return a;
+//     else
+//         return b;
+// }
+// int maxmin(int a[], int i, int j, int *max, int *min)
+// {
+//     int max1, min1, mid;
+//     if (i == j)
+//     {
+//         *max = *min = a[i];
+//     }
+//     else if (i == j - 1)
+//     {
+//         if (a[i] < a[j])
+//         {
+//             *min = a[i];
+//             *max = a[j];
+//         }
+//         else
+//         {
+//             *min = a[j];
+//             *max = a[i];
+//         }
+//     }
+//     else
+//     {
+//         mid = (i + j) / 2;
+//         maxmin(a, i, mid, max, min);
+//         maxmin(a, mid + 1, j, &max1, &min1);
+//         *max = max(*max, max1);
+//         *min = min(*min, min1);
+//     }
+// }
+// int main()
+// {
+// 	int a[100], n, i, max, min;
+// 	printf("Enter the number of elements in the array: ");
+// 	scanf("%d", &n);
+// 	printf("Enter the elements of the array: ");
+// 	for (i = 0; i < n; i++)
+// 		scanf("%d", &a[i]);
+// 	maxmin(a, 0, n - 1, &max, &min);
+// 	printf("Maximum element: %d", max);
+// 	printf("Minimum element: %d", min);
+// 	return 0;
+// }
+//floyd warshall algorithm
+#include <stdio.h>
+#define INF 99999
+#define V 4
+void printSolution(int dist[V][V]){
+	printf ("The following matrix shows the shortest distances"
+			" between every pair of vertices \n");
+	for (int i = 0; i < V; i++){
+		for (int j = 0; j < V; j++){
+			if (dist[i][j] == INF)
+				printf("%7s", "INF");
+			else
+				printf ("%7d", dist[i][j]);
+		}
+		printf("\n");
+	}
+
 }
-int min(int a, int b)
-{
-    if (a < b)
-        return a;
-    else
-        return b;
+int min(int a, int b){
+	return (a < b)? a : b;
 }
-int maxmin(int a[], int i, int j, int *max, int *min)
-{
-    int max1, min1, mid;
-    if (i == j)
-    {
-        *max = *min = a[i];
-    }
-    else if (i == j - 1)
-    {
-        if (a[i] < a[j])
-        {
-            *min = a[i];
-            *max = a[j];
-        }
-        else
-        {
-            *min = a[j];
-            *max = a[i];
-        }
-    }
-    else
-    {
-        mid = (i + j) / 2;
-        maxmin(a, i, mid, max, min);
-        maxmin(a, mid + 1, j, &max1, &min1);
-        *max = max(*max, max1);
-        *min = min(*min, min1);
-    }
+void floydWarshall(int graph[][V]){
+	int dist[V][V], i, j, k;
+	for (i = 0; i < V; i++)
+		for (j = 0; j < V; j++)
+			dist[i][j] = graph[i][j];
+	for (k = 0; k < V; k++){
+		for (i = 0; i < V; i++){
+			for (j = 0; j < V; j++){
+				if (dist[i][k] + dist[k][j] < dist[i][j])
+					dist[i][j] = dist[i][k] + dist[k][j];
+			}
+		}
+	}
+	printSolution(dist);
 }
-int main()
-{
-	int a[100], n, i, max, min;
-	printf("Enter the number of elements in the array: ");
-	scanf("%d", &n);
-	printf("Enter the elements of the array: ");
-	for (i = 0; i < n; i++)
-		scanf("%d", &a[i]);
-	maxmin(a, 0, n - 1, &max, &min);
-	printf("Maximum element: %d", max);
-	printf("Minimum element: %d", min);
+int main(){
+	int graph[V][V],i,j;
+	
+	for(i=0;i<V;i++){
+		for(j=0;j<V;j++){
+			printf("Enter the element (%d)(%d): ",i,j);
+			scanf("%d",&graph[i][j]);
+		}
+	}
+	floydWarshall(graph);
 	return 0;
 }
+
