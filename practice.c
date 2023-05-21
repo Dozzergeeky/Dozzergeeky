@@ -1189,3 +1189,191 @@ int main(){
 	return 0;
 }
 
+// dijkstra algorithm
+// #include<stdio.h>
+// #define INFINITY 9999
+// #define MAX 10
+ 
+// void dijikstra(int G[MAX][MAX], int n, int startnode);
+ 
+// void main(){
+// 	int G[MAX][MAX], i, j, n, u;
+// 	printf("\nEnter the no. of vertices:: ");
+// 	scanf("%d", &n);
+// 	printf("\nEnter the adjacency matrix::\n");
+// 	for(i=0;i < n;i++)
+// 		for(j=0;j < n;j++)
+// 			scanf("%d", &G[i][j]);
+// 	printf("\nEnter the starting node:: ");
+// 	scanf("%d", &u);
+// 	dijikstra(G,n,u);
+// }
+ 
+// void dijikstra(int G[MAX][MAX], int n, int startnode)
+// {
+// 	int cost[MAX][MAX], distance[MAX], pred[MAX];
+// 	int visited[MAX], count, mindistance, nextnode, i,j;
+// 	for(i=0;i < n;i++)
+// 		for(j=0;j < n;j++)
+// 			if(G[i][j]==0)
+// 				cost[i][j]=INFINITY;
+// 			else
+// 				cost[i][j]=G[i][j];
+	
+// 	for(i=0;i< n;i++)
+// 	{
+// 		distance[i]=cost[startnode][i];
+// 		pred[i]=startnode;
+// 		visited[i]=0;
+// 	}
+// 	distance[startnode]=0;
+// 	visited[startnode]=1;
+// 	count=1;
+// 	while(count < n-1){
+// 		mindistance=INFINITY;
+// 		for(i=0;i < n;i++)
+// 			if(distance[i] < mindistance&&!visited[i])
+// 			{
+// 				mindistance=distance[i];
+// 				nextnode=i;
+// 			}
+// 		visited[nextnode]=1;
+// 		for(i=0;i < n;i++)
+// 			if(!visited[i])
+// 				if(mindistance+cost[nextnode][i] < distance[i])
+// 				{
+// 					distance[i]=mindistance+cost[nextnode][i];
+// 					pred[i]=nextnode;
+// 				}
+// 			count++;
+// 	}
+ 
+// 	for(i=0;i < n;i++)
+// 		if(i!=startnode)
+// 		{
+// 			printf("\nDistance of %d = %d", i, distance[i]);
+// 			printf("\nPath = %d", i);
+// 			j=i;
+// 			do
+// 			{
+// 				j=pred[j];
+// 				printf(" <-%d", j);
+// 			}
+// 			while(j!=startnode);
+// 		}
+// }
+
+//job sequencing
+// #include<stdio.h>
+// #include<stdlib.h>
+// #define MAX_JOBS 100
+// typedef struct job {
+//     int id;
+//     int deadline;
+//     int profit;
+// } job;
+// int compare(const void* a, const void* b) {
+//     return ((job*)b)->profit - ((job*)a)->profit;
+// }
+// void jobSequencing(job jobs[], int n) {
+//     int i, j, k, max_deadline = 0, total_profit = 0;
+//     int slots[MAX_JOBS];
+//     for (i = 0; i < MAX_JOBS; i++) {
+//         slots[i] = -1;
+//     }
+//     qsort(jobs, n, sizeof(job), compare);
+//     for (i = 0; i < n; i++) {
+//         if (jobs[i].deadline > max_deadline) {
+//             max_deadline = jobs[i].deadline;
+//         }
+//     }
+//     for (i = 0; i < n; i++) {
+//         for (j = jobs[i].deadline - 1; j >= 0; j--) {
+//             if (slots[j] == -1) {
+//                 slots[j] = jobs[i].id;
+//                 total_profit += jobs[i].profit;
+//                 break;
+//             }
+//         }
+//     }
+//     printf("Job sequence: ");
+//     for (i = 0; i < max_deadline; i++) {
+//         if (slots[i] != -1) {
+//             printf("%d ", slots[i]);
+//         }
+//     }
+//     printf("\nTotal profit: %d", total_profit);
+// }
+// int main() {
+//     job jobs[MAX_JOBS];
+//     int n, i;
+
+//     printf("Enter the number of jobs: ");
+//     scanf("%d", &n);
+
+//     printf("Enter the job details (id, deadline, profit):\n");
+//     for (i = 0; i < n; i++) {
+//         scanf("%d %d %d", &jobs[i].id, &jobs[i].deadline, &jobs[i].profit);
+//     }
+
+//     jobSequencing(jobs, n);
+
+//     return 0;
+// }
+
+//knapsack
+// #include <stdio.h>
+
+// int main()
+// {
+//     int capacity, no_items, cur_weight, item;
+//     int used[10];
+//     float total_profit;
+//     int i;
+//     int weight[10];
+//     int value[10];
+
+//     printf("Enter the capacity of knapsack:\n");
+//     scanf("%d", &capacity);
+
+//     printf("Enter the number of items:\n");
+//     scanf("%d", &no_items);
+
+//     printf("Enter the weight and value of %d item:\n", no_items);
+//     for (i = 0; i < no_items; i++)
+//     {
+//         printf("Weight[%d]:\t", i);
+//         scanf("%d", &weight[i]);
+//         printf("Value[%d]:\t", i);
+//         scanf("%d", &value[i]);
+//     }
+
+//     for (i = 0; i < no_items; ++i)
+//         used[i] = 0;
+
+//     cur_weight = capacity;
+//     while (cur_weight > 0)
+//     {
+//         item = -1;
+//         for (i = 0; i < no_items; ++i)
+//             if ((used[i] == 0) &&
+//                 ((item == -1) || ((float) value[i] / weight[i] > (float) value[item] / weight[item])))
+//                 item = i;
+
+//         used[item] = 1;
+//         cur_weight -= weight[item];
+//         total_profit += value[item];
+//         if (cur_weight >= 0)
+//             printf("Added object %d (%d Rs., %dKg) completely in the bag. Space left: %d.\n", item + 1, value[item], weight[item], cur_weight);
+//         else
+//         {
+//             int item_percent = (int) ((1 + (float) cur_weight / weight[item]) * 100);
+//             printf("Added %d%% (%d Rs., %dKg) of object %d in the bag.\n", item_percent, value[item], weight[item], item + 1);
+//             total_profit -= value[item];
+//             total_profit += (1 + (float)cur_weight / weight[item]) * value[item];
+//         }
+//     }
+
+//     printf("Filled the bag with objects worth %.2f Rs.\n", total_profit);
+// }
+
