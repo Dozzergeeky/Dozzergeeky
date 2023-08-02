@@ -1,5 +1,6 @@
 # 💫 About Me:
-<h1 align="center">Hi 👋, I'm Debargha</h1><br><h3 align="center">5⭐ C++ Competitive Coder and Problem Solver <br><br>100+ Questions across all platforms<br><br>FrontEnd Web Developer<br><br>Participated in many Google Cloud Events </h3>
+<h1 align="center">Hi 👋, I'm Debargha</h1><br>
+<h3 align="center">5⭐ C++ Competitive Coder and Problem Solver <br>100+ Questions across all platforms<br>FrontEnd Web Developer<br>Participated in many Google Cloud Events </h3>
 
 
 ## 🌐 Socials:
