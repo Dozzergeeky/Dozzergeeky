@@ -1,5 +1,5 @@
 # 💫 About Me:
-<h1 align="center">Hi 👋, I'm Debargha</h1><br>
+<h1 align="center">Hi 👋, I'm Debargha</h1>
 <h2 align="center"> 5⭐ C++ Competitive Coder and Problem Solver <br>200+ Questions across all platforms<br>FrontEnd Web Developer<br>Completed 100+ Google Cloud Skill Batches</h2>
 
 
