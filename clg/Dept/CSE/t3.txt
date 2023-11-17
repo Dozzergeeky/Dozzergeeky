@@ -1,0 +1,2 @@
+some text in file 1 
+appended text
