@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "alt+d",
+    "command": "workbench.action.toggleMultiCursorModifier"
+  },
+  {
+    "key": "ctrl+f1",
+    "command": "github.copilot.toggleCopilot"
+  },
+  {
+    "key": "ctrl+shift+f4",
+    "command": "toggleVim"
+  }
+]

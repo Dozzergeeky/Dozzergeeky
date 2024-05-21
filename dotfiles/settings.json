@@ -1,0 +1,135 @@
+// "workbench.colorCustomizations": {
+//     "[Tokyo Night]": { // or "[Tokyo Night Storm]"
+//         "window.activeBorder": "#ff0000",
+//         "window.inactiveBorder":"#0000ff"
+//     }
+// }
+// "editor.tokenColorCustomizations": {
+//     "[Tokyo Night]": { // or "[Tokyo Night Storm]"
+//         "textMateRules": [{
+//             "scope": [
+//                 "comment",
+//                 "meta.var.expr storage.type",
+//                 "keyword.control.flow",
+//                 "keyword.control.return",
+//                 "meta.directive.vue punctuation.separator.key-value.html",
+//                 "meta.directive.vue entity.other.attribute-name.html",
+//                 "tag.decorator.js entity.name.tag.js",
+//                 "tag.decorator.js punctuation.definition.tag.js",
+//                 "storage.modifier"
+//             ],
+//             "settings": {
+//                 "fontStyle": ""
+//             }
+//         }]
+//     }
+// }
+// "workbench.colorCustomizations": {
+//     "[Tokyo Night]": {
+//         "foreground": "#959cbd",
+//         "panelTitle.activeBorder": "#3d59a1",
+//         "panelTitle.activeForeground": "#bdc7f0",
+//         "panelTitle.inactiveForeground": "#959cbd",
+//         "tab.activeForeground": "#bdc7f0",
+//         "tab.inactiveForeground": "#959cbd",
+//         "breadcrumb.foreground": "#959cbd",
+//         "breadcrumb.focusForeground": "#bdc7f0",
+//         "breadcrumb.activeSelectionForeground": "#bdc7f0",
+//         "statusBar.foreground": "#bdc7f0",
+//         "list.focusForeground": "#bdc7f0",
+//         "list.hoverForeground": "#bdc7f0",
+//         "list.activeSelectionForeground": "#bdc7f0",
+//         "list.inactiveSelectionForeground": "#bdc7f0",
+//         "list.inactiveSelectionBackground": "#202330",
+//         "sideBar.foreground": "#959cbd",
+//         "dropdown.foreground": "#959cbd",
+//         "menu.foreground":"#bdc7f0",
+//         "menubar.selectionForeground":"#bdc7f0",
+//         "input.foreground": "#959cbd",
+//         "input.placeholderForeground": "#959cbd",
+//         "activityBar.foreground": "#bdc7f0",
+//         "activityBar.inactiveForeground": "#787c99",
+//         "gitDecoration.ignoredResourceForeground": "#696d87",
+//     },
+// }
+// "workbench.colorCustomizations": {
+//     "[Tokyo Night]": { // or "[Tokyo Night Storm]"
+//         "window.activeBorder": "#ff0000",
+//         "window.inactiveBorder":"#0000ff"
+//     }
+// }
+{
+  "cmake.configureOnOpen": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "explorer.confirmDelete": false,
+  "editor.fontSize": 16,
+  "workbench.iconTheme": "catppuccin-latte",
+  "workbench.colorTheme": "Tokyo Night Frameless",
+  "git.autofetch": true,
+  "files.autoSave": "afterDelay",
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "glassit.alpha": 255,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "rapidapi.terminalLink.enabled": false,
+  "git.ignoreRebaseWarning": true,
+  "tabnine.experimentalAutoImports": true,
+  "GitLive.Special branches": "main|master|trunk|dev|develop|qa|test|release[-/].*",
+  "GitLive.Issue tracker integration": "Disabled",
+  "leetcode.workspaceFolder": "c:\\Users\\Dozzer\\OneDrive - nsec.ac.in\\BIN\\CPP\\codehelp",
+  "leetcode.defaultLanguage": "cpp",
+  "leetcode.showDescription": "In File Comment",
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.commentDescription": false,
+  "editor.fontFamily": "'Hack Nerd Font',Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.mouseWheelZoom": true,
+  "editor.lineHeight": 25,
+  "editor.wordWrap": "on",
+  "editor.cursorBlinking": "smooth",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "notebook.formatOnSave.enabled": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.lineHeight": 1.3,
+  "files.autoSaveDelay": 1500,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "workbench.layoutControl.enabled": false,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "redhat.telemetry.enabled": false,
+  "material-ui-snippets.showNotesOnStartup": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": 2,
+  "editor.linkedEditing": true,
+  "diffEditor.hideUnchangedRegions.enabled": true
+
+  // "workbench.statusBar.visible": false,
+  // "editor.minimap.enabled": false,
+  // "workbench.editor.showIcons": false,
+  // "workbench.editor.showTabs": "single",
+  // "editor.lineNumbers": "off",
+  // "editor.glyphMargin": false,
+  // "workbench.activityBar.location": "hidden",
+  // "editor.folding": false,
+  // "editor.guides.indentation": false,
+}

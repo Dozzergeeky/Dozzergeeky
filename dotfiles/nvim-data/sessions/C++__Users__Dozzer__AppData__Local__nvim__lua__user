@@ -1,0 +1,80 @@
+let SessionLoad = 1
+let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
+let v:this_session=expand("<sfile>:p")
+silent only
+silent tabonly
+cd ~/AppData/Local/nvim/lua/user
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+let s:shortmess_save = &shortmess
+if &shortmess =~ 'A'
+  set shortmess=aoOA
+else
+  set shortmess=aoO
+endif
+badd +0 init.lua
+argglobal
+%argdel
+edit init.lua
+argglobal
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=99
+setlocal fml=1
+setlocal fdn=20
+setlocal fen
+silent! normal! zE
+13,17fold
+3,18fold
+24,27fold
+35,37fold
+38,40fold
+33,41fold
+42,45fold
+31,50fold
+52,54fold
+29,55fold
+61,64fold
+60,65fold
+58,66fold
+71,84fold
+93,96fold
+99,109fold
+98,110fold
+112,114fold
+116,118fold
+120,122fold
+124,126fold
+128,130fold
+132,134fold
+136,138fold
+89,141fold
+86,142fold
+146,150fold
+145,151fold
+1,153fold
+let &fdl = &fdl
+let s:l = 153 - ((24 * winheight(0) + 12) / 25)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 153
+normal! 0
+tabnext 1
+if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20
+let &shortmess = s:shortmess_save
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if filereadable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &g:so = s:so_save | let &g:siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

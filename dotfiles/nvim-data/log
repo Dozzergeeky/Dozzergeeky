@@ -1,0 +1,52 @@
+ERR 2024-02-09T15:42:49.710 nvim.22716.0 decor_provider_invoke:47: error in provider ufo:win: Error executing lua: ...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:44: Vim:E5108: Error executing lua ...pData/Local/nvim/lua/astronvim/utils/status/provider.lua:338: Invalid buffer id: 1
+stack traceback:
+	[C]: in function 'nvim_buf_get_name'
+	...pData/Local/nvim/lua/astronvim/utils/status/provider.lua:338: in function 'buf_name'
+	...pData/Local/nvim/lua/astronvim/utils/status/provider.lua:356: in function 'provider'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:381: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:473: in function 'eval'
+	...Local/nvim-data/lazy/heirline.nvim/lua/heirline/init.lua:114: in function <...Local/nvim-data/lazy/heirline.nvim/lua/heirline/init.lua:109>
+	[C]: in function 'redrawstatus'
+	...Data/Local/nvim/lua/astronvim/utils/status/component.lua:156: in function 'cb'
+	vim/_editor.lua:263: in function <vim/_editor.lua:262>
+stack traceback:
+	[C]: in function '__index'
+	...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:44: in function <...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:37>
+	[C]: in function 'redrawstatus'
+	...Data/Local/nvim/lua/astronvim/utils/status/component.lua:156: in function 'cb'
+	vim/_editor.lua:263: in function <vim/_editor.lua:262>
+ERR 2024-02-09T15:54:29.610 nvim.37176.0 decor_provider_invoke:47: error in provider ufo:win: Error executing lua: ...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:44: Vim:E5108: Error executing lua ...pData/Local/nvim/lua/astronvim/utils/status/provider.lua:338: Invalid buffer id: 1
+stack traceback:
+	[C]: in function 'nvim_buf_get_name'
+	...pData/Local/nvim/lua/astronvim/utils/status/provider.lua:338: in function 'buf_name'
+	...pData/Local/nvim/lua/astronvim/utils/status/provider.lua:356: in function 'provider'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:381: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:398: in function '_eval'
+	...nvim-data/lazy/heirline.nvim/lua/heirline/statusline.lua:473: in function 'eval'
+	...Local/nvim-data/lazy/heirline.nvim/lua/heirline/init.lua:114: in function <...Local/nvim-data/lazy/heirline.nvim/lua/heirline/init.lua:109>
+	[C]: in function 'redrawstatus'
+	...Data/Local/nvim/lua/astronvim/utils/status/component.lua:156: in function 'cb'
+	vim/_editor.lua:263: in function <vim/_editor.lua:262>
+stack traceback:
+	[C]: in function '__index'
+	...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:44: in function <...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:37>
+	[C]: in function 'redrawstatus'
+	...Data/Local/nvim/lua/astronvim/utils/status/component.lua:156: in function 'cb'
+	vim/_editor.lua:263: in function <vim/_editor.lua:262>
+ERR 2024-04-30T11:31:47.478 nvim.11196.0 decor_provider_invoke:47: error in provider ufo:end: Error executing lua: Keyboard interrupt
+stack traceback:
+	[C]: in function 'foldClosed'
+	...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:168: in function 'unHandledFoldedLnums'
+	...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:71: in function 'winCall'
+	...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:70: in function <...Data/Local/nvim-data/lazy/nvim-ufo/lua/ufo/decorator.lua:62>
