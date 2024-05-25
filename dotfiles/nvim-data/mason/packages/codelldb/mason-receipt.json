@@ -1,1 +1,0 @@
-{"secondary_sources":[],"name":"codelldb","metrics":{"start_time":1707473697931,"completion_time":1707473715286},"schema_version":"1.1","links":{"opt":{},"share":{},"bin":{"codelldb.cmd":"extension\/adapter\/codelldb.exe"}},"primary_source":{"id":"pkg:github\/vadimcn\/vscode-lldb@v1.10.0","type":"registry+v1"}}

@@ -1,1 +1,0 @@
-{"secondary_sources":[],"schema_version":"1.1","primary_source":{"type":"registry+v1","id":"pkg:github\/tekumara\/typos-vscode@v0.1.12"},"metrics":{"start_time":1707473215833,"completion_time":1707473220795},"links":{"bin":{"typos-lsp.cmd":"target\/x86_64-pc-windows-msvc\/release\/typos-lsp.exe"},"share":{},"opt":{}},"name":"typos-lsp"}

@@ -1,4 +1,0 @@
-[09-Feb-24 4:08:57 PM][smart-splits.nvim] Auto-detected multiplexer back-end: none
-[10-Feb-24 2:49:40 PM][smart-splits.nvim] Auto-detected multiplexer back-end: none
-[25-Apr-24 8:52:09 PM][smart-splits.nvim] Auto-detected multiplexer back-end: none
-[15-May-24 9:35:09 PM][smart-splits.nvim] Auto-detected multiplexer back-end: none

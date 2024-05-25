@@ -1,1 +1,0 @@
-{"links":{"opt":{},"share":{"mason-schemas\\lsp\\powershell-editor-services.json":"mason-schemas\\lsp.json"},"bin":{}},"primary_source":{"type":"registry+v1","id":"pkg:github\/powershell\/powershelleditorservices@v3.17.0"},"secondary_sources":[],"name":"powershell-editor-services","schema_version":"1.1","metrics":{"completion_time":1707556735909,"start_time":1707556727322}}

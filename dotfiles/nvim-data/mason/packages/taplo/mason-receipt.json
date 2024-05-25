@@ -1,1 +1,0 @@
-{"secondary_sources":[],"name":"taplo","metrics":{"start_time":1707473697945,"completion_time":1707473702640},"schema_version":"1.1","links":{"opt":{},"share":{},"bin":{"taplo.cmd":"taplo.exe"}},"primary_source":{"id":"pkg:github\/tamasfe\/taplo@0.8.1","type":"registry+v1"}}
