@@ -1,0 +1,236 @@
+CREATE TABLE Branch (
+    branch_name VARCHAR2(50),
+    branch_city VARCHAR2(50),
+    assets REAL,
+    PRIMARY KEY (branch_name)
+);
+
+CREATE TABLE Account (
+    accno NUMBER PRIMARY KEY,
+    branch_name VARCHAR2(50),
+    balance REAL,
+    FOREIGN KEY (branch_name) REFERENCES Branch(branch_name)
+);
+
+CREATE TABLE Customer (
+    customer_name VARCHAR2(50),
+    customer_street VARCHAR2(50),
+    city VARCHAR2(50),
+    PRIMARY KEY (customer_name)
+);
+
+CREATE TABLE Depositor (
+    customer_name VARCHAR2(50),
+    accno NUMBER,
+    PRIMARY KEY (customer_name, accno),
+    FOREIGN KEY (customer_name) REFERENCES Customer(customer_name),
+    FOREIGN KEY (accno) REFERENCES Account(accno)
+);
+
+CREATE TABLE Loan (
+    loan_number NUMBER PRIMARY KEY,
+    branch_name VARCHAR2(50),
+    amount REAL,
+    FOREIGN KEY (branch_name) REFERENCES Branch(branch_name)
+);
+
+CREATE TABLE Borrower (
+    customer_name VARCHAR2(50),
+    loan_number NUMBER,
+    PRIMARY KEY (customer_name, loan_number),
+    FOREIGN KEY (customer_name) REFERENCES Customer(customer_name),
+    FOREIGN KEY (loan_number) REFERENCES Loan(loan_number)
+);
+
+Table created.
+
+Table created.
+
+Table created.
+
+Table created.
+
+Table created.
+
+Table created.
+
+//
+-- Insert sample data
+INSERT INTO Branch VALUES ('Main', 'New York', 5000000);
+INSERT INTO Branch VALUES ('North', 'New York', 3000000);
+INSERT INTO Branch VALUES ('West', 'San Francisco', 4000000);
+
+INSERT INTO Account VALUES (1, 'Main', 1500);
+INSERT INTO Account VALUES (2, 'Main', 2000);
+INSERT INTO Account VALUES (3, 'North', 2500);
+INSERT INTO Account VALUES (4, 'West', 3000);
+
+INSERT INTO Customer VALUES ('Alice', '123 Maple St', 'New York');
+INSERT INTO Customer VALUES ('Bob', '456 Oak St', 'New York');
+INSERT INTO Customer VALUES ('Charlie', '789 Pine St', 'San Francisco');
+
+INSERT INTO Depositor VALUES ('Alice', 1);
+INSERT INTO Depositor VALUES ('Alice', 2);
+INSERT INTO Depositor VALUES ('Bob', 3);
+INSERT INTO Depositor VALUES ('Charlie', 4);
+
+INSERT INTO Loan VALUES (100, 'Main', 5000);
+INSERT INTO Loan VALUES (101, 'North', 7000);
+INSERT INTO Loan VALUES (102, 'West', 10000);
+
+INSERT INTO Borrower VALUES ('Alice', 100);
+INSERT INTO Borrower VALUES ('Bob', 101);
+INSERT INTO Borrower VALUES ('Charlie', 102);
+INSERT INTO Borrower VALUES ('Alice', 102);
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+//1
+SELECT d.customer_name
+FROM Depositor d
+JOIN Account a ON d.accno = a.accno
+WHERE a.branch_name = 'Main'
+GROUP BY d.customer_name
+HAVING COUNT(d.accno) >= 2;
+
+
+
+CUSTOMER_NAME
+-------------
+Alice
+
+
+//2
+SELECT d.customer_name
+FROM Depositor d
+JOIN Account a ON d.accno = a.accno
+JOIN Branch b ON a.branch_name = b.branch_name
+WHERE b.branch_city = 'New York'
+GROUP BY d.customer_name
+HAVING COUNT(DISTINCT a.branch_name) = (
+    SELECT COUNT(DISTINCT branch_name)
+    FROM Branch
+    WHERE branch_city = 'New York'
+);
+
+
+no data found
+
+3//
+DELETE FROM Depositor
+WHERE accno IN (
+    SELECT accno
+    FROM Account
+    WHERE branch_name IN (
+        SELECT branch_name
+        FROM Branch
+        WHERE branch_city = 'New York'
+    )
+);
+
+
+3 row(s) deleted.
+
+DELETE FROM Account
+WHERE branch_name IN (
+    SELECT branch_name
+    FROM Branch
+    WHERE branch_city = 'New York'
+);
+
+3 row(s) deleted.
+
+//4
+-- Query
+SELECT b.customer_name, COUNT(b.loan_number) AS loan_count, SUM(l.amount) AS total_amount
+FROM Borrower b
+JOIN Loan l ON b.loan_number = l.loan_number
+GROUP BY b.customer_name;
+
+-- Output
+| customer_name | loan_count | total_amount |
+|---------------|------------|--------------|
+| Alice         | 2          | 15000        |
+| Bob           | 1          | 7000         |
+| Charlie       | 1          | 10000        |
+
+//5
+-- Query
+SELECT b.customer_name
+FROM Borrower b
+JOIN Loan l ON b.loan_number = l.loan_number
+WHERE l.branch_name = 'Main';
+
+-- Output
+| customer_name |
+|---------------|
+| Alice        |
+
+//6
+-- Query
+UPDATE Account
+SET balance = 10000
+WHERE accno IN (
+    SELECT accno
+    FROM Depositor
+    WHERE customer_name = 'Charlie'
+);
+
+1 row(s) updated.
+
+//7
+-- Query
+SELECT customer_name
+FROM (
+    SELECT b.customer_name, COUNT(b.loan_number) AS loan_count
+    FROM Borrower b
+    GROUP BY b.customer_name
+    ORDER BY loan_count DESC
+) 
+WHERE ROWNUM = 1;
+
+-- Output
+| customer_name |
+|---------------|
+| Alice         |
+

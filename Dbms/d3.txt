@@ -1,0 +1,108 @@
+-- Table creation statements
+CREATE TABLE Person (
+    driver_id VARCHAR2(20) PRIMARY KEY,
+    name VARCHAR2(50),
+    address VARCHAR2(100)
+);
+
+CREATE TABLE Car (
+    regno VARCHAR2(20) PRIMARY KEY,
+    model VARCHAR2(50),
+    year NUMBER(4)
+);
+
+CREATE TABLE Accident (
+    reportno INTEGER PRIMARY KEY,
+    Acc_date DATE,
+    location VARCHAR2(100)
+);
+
+CREATE TABLE Owns (
+    driver_id VARCHAR2(20),
+    regno VARCHAR2(20),
+    PRIMARY KEY (driver_id, regno),
+    FOREIGN KEY (driver_id) REFERENCES Person(driver_id),
+    FOREIGN KEY (regno) REFERENCES Car(regno)
+);
+
+CREATE TABLE Participation (
+    driver_id VARCHAR2(20),
+    regno VARCHAR2(20),
+    reportno INTEGER,
+    damage_amount NUMBER(10, 2),
+    PRIMARY KEY (driver_id, regno, reportno),
+    FOREIGN KEY (driver_id) REFERENCES Person(driver_id),
+    FOREIGN KEY (regno) REFERENCES Car(regno),
+    FOREIGN KEY (reportno) REFERENCES Accident(reportno)
+);
+
+-- Insert sample data into tables (ensuring each query has a result)
+INSERT INTO Person (driver_id, name, address)
+VALUES ('D1', 'John Doe', '123 Main St');
+
+INSERT INTO Person (driver_id, name, address)
+VALUES ('D2', 'Jane Smith', '456 Oak Ave');
+
+INSERT INTO Person (driver_id, name, address)
+VALUES ('D3', 'Henry Suit', '234 Apple St');
+
+
+INSERT INTO Car (regno, model, year)
+VALUES ('CAR001', 'Toyota Camry', 2010);
+
+INSERT INTO Car (regno, model, year)
+VALUES ('CAR002', 'Rangerover', 2010);
+
+INSERT INTO Accident (reportno, Acc_date, location)
+VALUES (1, TO_DATE('2010-05-15', 'YYYY-MM-DD'), 'Intersection A');
+
+INSERT INTO Accident (reportno, Acc_date, location)
+VALUES (2, TO_DATE('2012-07-20', 'YYYY-MM-DD'), 'Highway B');
+
+INSERT INTO Owns (driver_id, regno)
+VALUES ('D1', 'CAR001');
+
+INSERT INTO Owns (driver_id, regno)
+VALUES ('D2', 'CAR002');
+
+INSERT INTO Participation (driver_id, regno, reportno, damage_amount)
+VALUES ('D1', 'CAR001', 1, 5000);
+
+INSERT INTO Participation (driver_id, regno, reportno, damage_amount)
+VALUES ('D2', 'CAR002', 2, 8000);
+
+1
+UPDATE Participation
+SET damage_amount = 6000
+WHERE regno = 'CAR001'
+AND reportno BETWEEN '1' AND '200';
+
+2
+SELECT COUNT(DISTINCT p.driver_id) AS num_owners_2012
+FROM Person p
+JOIN Owns o ON p.driver_id = o.driver_id
+JOIN Participation pa ON o.regno = pa.regno
+JOIN Accident a ON pa.reportno = a.reportno
+WHERE EXTRACT(YEAR FROM a.Acc_date) = 2012;
+
+3
+SELECT p.driver_id,
+    CASE 
+        WHEN COUNT(a.reportno) >= 1 THEN 'yes'
+        ELSE 'no'
+    END AS met_accident_2010
+FROM Person p
+LEFT JOIN Owns o ON p.driver_id = o.driver_id
+LEFT JOIN Participation pa ON o.regno = pa.regno
+LEFT JOIN Accident a ON pa.reportno = a.reportno
+WHERE EXTRACT(YEAR FROM a.Acc_date) = 2010
+GROUP BY p.driver_id;
+
+4
+SELECT p.name, c.model
+FROM Person p
+JOIN Owns o ON p.driver_id = o.driver_id
+JOIN Car c ON o.regno = c.regno;
+
+
+

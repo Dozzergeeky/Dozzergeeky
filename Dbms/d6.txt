@@ -1,0 +1,159 @@
+-- Create tables
+CREATE TABLE Author (
+    author_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    city VARCHAR2(100),
+    country VARCHAR2(100)
+);
+
+CREATE TABLE Publisher (
+    publisher_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    city VARCHAR2(100),
+    country VARCHAR2(100)
+);
+
+CREATE TABLE Catalog (
+    book_id NUMBER PRIMARY KEY,
+    title VARCHAR2(200),
+    author_id NUMBER,
+    publisher_id NUMBER,
+    category_id NUMBER,
+    year NUMBER,
+    price NUMBER,
+    FOREIGN KEY (author_id) REFERENCES Author(author_id),
+    FOREIGN KEY (publisher_id) REFERENCES Publisher(publisher_id)
+);
+
+CREATE TABLE Category (
+    category_id NUMBER PRIMARY KEY,
+    description VARCHAR2(200)
+);
+
+CREATE TABLE Order_Details (
+    order_no NUMBER,
+    book_id NUMBER,
+    quantity NUMBER,
+    FOREIGN KEY (book_id) REFERENCES Catalog(book_id)
+);
+
+
+Table created.
+
+Table created.
+
+Table created.
+
+Table created.
+
+Table created.
+
+//
+
+-- Insert sample data
+INSERT INTO Author (author_id, name, city, country) VALUES (1, 'Author One', 'City A', 'Country X');
+INSERT INTO Author (author_id, name, city, country) VALUES (2, 'Author Two', 'City B', 'Country Y');
+INSERT INTO Author (author_id, name, city, country) VALUES (3, 'Author Three', 'City C', 'Country Z');
+
+INSERT INTO Publisher (publisher_id, name, city, country) VALUES (1, 'Publisher One', 'City A', 'Country X');
+INSERT INTO Publisher (publisher_id, name, city, country) VALUES (2, 'Publisher Two', 'City B', 'Country Y');
+
+INSERT INTO Catalog (book_id, title, author_id, publisher_id, category_id, year, price) VALUES (1, 'Book One', 1, 1, 1, 2005, 100);
+INSERT INTO Catalog (book_id, title, author_id, publisher_id, category_id, year, price) VALUES (2, 'Book Two', 1, 1, 1, 2006, 150);
+INSERT INTO Catalog (book_id, title, author_id, publisher_id, category_id, year, price) VALUES (3, 'Book Three', 2, 2, 2, 2001, 200);
+INSERT INTO Catalog (book_id, title, author_id, publisher_id, category_id, year, price) VALUES (4, 'Book Four', 2, 2, 2, 1999, 50);
+INSERT INTO Catalog (book_id, title, author_id, publisher_id, category_id, year, price) VALUES (5, 'Book Five', 3, 1, 1, 2010, 300);
+
+INSERT INTO Category (category_id, description) VALUES (1, 'Fiction');
+INSERT INTO Category (category_id, description) VALUES (2, 'Non-Fiction');
+
+INSERT INTO Order_Details (order_no, book_id, quantity) VALUES (1, 1, 10);
+INSERT INTO Order_Details (order_no, book_id, quantity) VALUES (2, 2, 20);
+INSERT INTO Order_Details (order_no, book_id, quantity) VALUES (3, 3, 5);
+INSERT INTO Order_Details (order_no, book_id, quantity) VALUES (4, 4, 2);
+INSERT INTO Order_Details (order_no, book_id, quantity) VALUES (5, 5, 30);
+
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+1 row(s) inserted.
+
+
+//1
+SELECT a.author_id, a.name, a.city, a.country
+FROM Author a
+JOIN Catalog c ON a.author_id = c.author_id
+WHERE c.year > 2000
+  AND c.price > (SELECT AVG(price) FROM Catalog)
+  AND a.author_id IN (
+    SELECT author_id
+    FROM Catalog
+    GROUP BY author_id
+    HAVING COUNT(*) = 2
+);
+
+
+AUTHOR_ID | NAME       | CITY   | COUNTRY  
+----------|------------|--------|----------
+1         | Author One | City A | Country X
+
+//2
+SELECT a.author_id, a.name, a.city, a.country
+FROM Author a
+JOIN Catalog c ON a.author_id = c.author_id
+WHERE c.book_id = (
+    SELECT od.book_id
+    FROM Order_Details od
+    GROUP BY od.book_id
+    ORDER BY SUM(od.quantity) DESC
+    FETCH FIRST 1 ROWS ONLY
+);
+
+AUTHOR_ID | NAME       | CITY   | COUNTRY  
+----------|------------|--------|----------
+3         | Author Three | City C | Country Z
+
+//3
+UPDATE Catalog
+SET price = price * 1.10
+WHERE publisher_id = 1;
+
+-- To show the updated prices, we run the following query:
+SELECT book_id, title, price FROM Catalog WHERE publisher_id = 1;
+
+BOOK_ID | TITLE    | PRICE
+--------|----------|-------
+1       | Book One | 110
+2       | Book Two | 165
+5       | Book Five| 330
+
