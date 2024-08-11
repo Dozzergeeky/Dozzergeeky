@@ -1,3 +1,0 @@
-John Doe   ,   46   ,   219   ,   94000
-Jamie Mills   ,   36   ,   109   ,   92000
-Willis Somerset   ,   66   ,   84   ,   120000
