@@ -7,9 +7,10 @@
 ## I'm a Full-Stack Developer, MERN Mentor @Codefeast, Final Year CSE Undergrad and a GEEK!
 
 - 5 ⭐ C++ Competitive Coder and Problem Solver
-- 200+ Questions across all coding platforms
-- FrontEnd Web Developer
-- Completed 100+ Google Cloud Skill Batches
+- **350+** Questions across all coding platforms
+- **Full Stack Web Developer**
+- Completed **100+ Google Cloud Skill Batches**
+- Qualified for **Smart India Hackathon 2023** and **Amazon ML Summer School 2023**
 - Tech and Comics are my world
 
 
