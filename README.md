@@ -4,7 +4,7 @@
 [![wakatime](https://wakatime.com/badge/user/fee86939-95dd-4ab2-ba8c-25198fd0df46.svg)](https://wakatime.com/@fee86939-95dd-4ab2-ba8c-25198fd0df46)
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/@dozzergeeky) 
 
-## I'm a Full-Stack Developer, Ex-MERN Mentor @Codefeast,CSE Grad and a GEEK!
+## I'm a Full-Stack Developer,SDE @TCS, Ex-MERN Mentor @Codefeast,CSE Grad and a GEEK!
 
 - 5 ⭐ C++ Competitive Coder and Problem Solver
 - **350+** Questions across all coding platforms
